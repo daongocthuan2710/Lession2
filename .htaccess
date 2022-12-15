@@ -1,0 +1,14 @@
+# Tất cả các request tới sẽ được điều hướng vào app/index.html
+
+<IfModule mod_rewrite.c>
+  Options -Multiviews
+  RewriteEngine On
+
+  ErrorDocument 404 http://www.example.com/404.html
+
+  # localhost/Larmpart_Intern -> localhost/Larmpart_Intern/app
+  RewriteRule ^$ app/ [L]
+
+  # localhost/Larmpart_Intern/login -> localhost/Larmpart_Intern/app/login
+  # RewriteRule (.*)$ app/$1 [L]
+</IfModule>
